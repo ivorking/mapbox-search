@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import Map from './Map'
 import './App.css';
 
-class App extends Component {
+class Map extends Component {
   render() {
     return (
-      <div className = "App">
-        <Map />
+      <div className = "Map">
+        Map!
       </div>
     )
   }
@@ -22,4 +21,4 @@ class App extends Component {
 //   );
 // }
 
-export default App;
+export default Map;

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import mapbox from 'mapbox-gl'
-import './App.css';
+import './Map.css';
 
 class Map extends Component {
 
@@ -8,7 +8,7 @@ class Map extends Component {
     mapbox.accessToken = 'pk.eyJ1IjoiaXZvcmtpbmciLCJhIjoiY2tmbDloMzNlMW1xOTJ5czJkYTNhYmo0biJ9.whbHEGaJGvOqgjD32qi_8g';
     var map = new mapbox.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
+      style: 'mapbox://styles/mapbox/dark-v9'
     });
 
   }

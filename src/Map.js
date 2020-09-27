@@ -1,13 +1,24 @@
 import React, {Component} from 'react';
+import mapbox from 'mapbox-gl'
 import './App.css';
 
 class Map extends Component {
+
+  componentDidMount() {
+    mapbox.accessToken = 'pk.eyJ1IjoiaXZvcmtpbmciLCJhIjoiY2tmbDloMzNlMW1xOTJ5czJkYTNhYmo0biJ9.whbHEGaJGvOqgjD32qi_8g';
+    var map = new mapbox.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11'
+    });
+
+  }
+
   render() {
     return (
-      <div className = "Map">
+      <div id = "map">
         Map!
       </div>
-    )
+    );
   }
 }
 

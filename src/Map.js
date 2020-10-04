@@ -8,15 +8,21 @@ class Map extends Component {
     mapbox.accessToken = 'pk.eyJ1IjoiaXZvcmtpbmciLCJhIjoiY2tmbDloMzNlMW1xOTJ5czJkYTNhYmo0biJ9.whbHEGaJGvOqgjD32qi_8g';
     var map = new mapbox.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/dark-v9'
+      style: 'mapbox://styles/mapbox/dark-v9',
+      center: [
+        -74.0060, 40.7128
+      ],
+      zoom: 12
     });
+
+    const navigationControl = new mapbox.NavigationControl()
+    map.addControl(navigationControl)
 
   }
 
   render() {
     return (
       <div id = "map">
-        Map!
       </div>
     );
   }

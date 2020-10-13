@@ -1,0 +1,7 @@
+div.places {
+  position: fixed;
+  top: 52px;
+  left: 20px;
+  z-index: 1;
+  width: 200px;
+}

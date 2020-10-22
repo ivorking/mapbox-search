@@ -4,7 +4,7 @@ class PlaceItem extends Component {
   render () {
     return (
       <div className = "place-item">
-        One individual place
+        {this.props.place.name}
       </div>
     )
   }

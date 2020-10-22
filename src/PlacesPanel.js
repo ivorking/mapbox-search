@@ -6,7 +6,7 @@ class PlacesPanel extends Component {
   render() {
     const places = this.props.app.state.places
     const placeItems = places.map(place => {
-      return <PlaceItem></PlaceItem>
+      return <PlaceItem place={place}></PlaceItem>
     })
 
     return (

@@ -6,7 +6,7 @@ div.places {
   width: 200px;
 }
 
-div.place-item {
+div.place-item, div.no-results {
   background-color: white;
   padding: 5px 10px 5px 10px;
   font-size: 14px;
@@ -15,4 +15,8 @@ div.place-item {
 
 div.place-item:hover {
   background-color: #ffffcc;
+}
+
+div.no-results {
+  color: #999999;
 }

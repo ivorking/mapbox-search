@@ -23,6 +23,19 @@ class Search extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
+
+    const places = this.props.app.state.places
+
+    places.push({
+      name: this.state.value,
+      latitude: 40,
+      longitude: -72
+    })
+
+    this.props.app.setState({
+      places: places
+    })
+
     this.setState ({
       value: ""
     })

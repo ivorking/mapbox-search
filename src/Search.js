@@ -1,3 +1,4 @@
+import { accessToken } from 'mapbox-gl';
 import React, { Component } from 'react';
 import './Search.css'
 
@@ -24,6 +25,8 @@ class Search extends Component {
   handleSubmit(event) {
     event.preventDefault()
 
+    const accessToken =  "pk.eyJ1IjoiaXZvcmtpbmciLCJhIjoiY2tmbDloMzNlMW1xOTJ5czJkYTNhYmo0biJ9.whbHEGaJGvOqgjD32qi_8g"
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${this.state.value}.json`
     const places = this.props.app.state.places
 
     places.push({

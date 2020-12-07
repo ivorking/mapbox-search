@@ -25,23 +25,32 @@ class Search extends Component {
   handleSubmit(event) {
     event.preventDefault()
 
-    const accessToken =  "pk.eyJ1IjoiaXZvcmtpbmciLCJhIjoiY2tmbDloMzNlMW1xOTJ5czJkYTNhYmo0biJ9.whbHEGaJGvOqgjD32qi_8g"
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${this.state.value}.json`
-    const places = this.props.app.state.places
+    const accessToken = 'pk.eyJ1IjoiaXZvcmtpbmciLCJhIjoiY2tmbDloMzNlMW1xOTJ5czJkYTNhYmo0biJ9.whbHEGaJGvOqgjD32qi_8g'
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${this.state.value}.json?access_token=${accessToken}`
+    console.log(url)
 
-    places.push({
-      name: this.state.value,
-      latitude: 40,
-      longitude: -72
-    })
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
 
-    this.props.app.setState({
-      places: places
-    })
+        const places = this.props.app.state.places
+        const firstResult = data.features[0]
 
-    this.setState ({
-      value: ""
-    })
+        places.push({
+          name: this.state.value,
+          longitude: firstResult.center[0],
+          latitude: firstResult.center[1]
+        })
+    
+        this.props.app.setState({
+          places: places
+        })
+    
+        this.setState ({
+          value: ""
+        })
+
+      })
   }
 
   render () {

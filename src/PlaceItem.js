@@ -10,14 +10,21 @@ class PlaceItem extends Component {
     const place = this.props.place
 
     if (map) {
+      const popup = new mapbox.Popup({
+        closeButton: false
+      })
+
+      popup.setHTML(place.name)
+
       console.log('yes map')
       const marker = new mapbox.Marker({
-        color: '#2727eb6'
+        color: '#2727e6'
       })
-    }
 
-    marker.setLngLat([place.longitude, place.latitude])
-    marker.addTo(map)
+      marker.setLngLat([place.longitude, place.latitude])
+      marker.addTo(map)
+
+  }
 
     return (
       <div className = "place-item">
